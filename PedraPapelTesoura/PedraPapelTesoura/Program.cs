@@ -33,6 +33,10 @@ namespace PedraPapelTesoura {
 
             #region Verficação
             //Usar ambas as stringss de escolha e verificar quem ganha ou se há empate. Dizer primeiro ao utilizador qual foi a escolha do PC
+            // Vou fazer isto de uma maneira muito feia porque ainda não tenho a confiança necessária para andar a usar arrays multi-dimensionais em c#
+
+            //if ()
+
             #endregion
         }
     }
