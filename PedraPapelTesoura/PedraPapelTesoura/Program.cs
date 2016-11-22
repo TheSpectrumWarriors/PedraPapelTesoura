@@ -19,6 +19,17 @@ namespace PedraPapelTesoura {
             #region Variáveis
             // Array com as 3 opções (necessário para o random)
             string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
+            String escolhaDoUtilizador;
+            String escolhaDoComputador;
+
+            #region Questão
+            //usar string escolhaDoUtilizador
+
+            #region Random
+            //usar string escolhaDoComputador
+
+            #region Verficação
+            //Usar ambas as stringss de escolha e verificar quem ganha ou se há empate. Dizer primeiro ao utilizador qual foi a escolha do PC
         }
     }
 }
