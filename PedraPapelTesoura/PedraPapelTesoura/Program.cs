@@ -16,6 +16,9 @@ using System.Threading.Tasks;
 namespace PedraPapelTesoura {
     class Program {
         static void Main(string[] args) {
+            #region Variáveis
+            // Array com as 3 opções (necessário para o random)
+            string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
         }
     }
 }
