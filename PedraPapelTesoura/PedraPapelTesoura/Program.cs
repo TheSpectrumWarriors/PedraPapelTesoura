@@ -28,7 +28,7 @@ namespace PedraPapelTesoura {
             Console.Write("Escolhe Pedra/Papel/Tesoura: ");
             escolhaDoUtilizador = Console.ReadLine();
 
-            if escolhaDoUtilizador = "Pedra"
+            
 
             #endregion
 
