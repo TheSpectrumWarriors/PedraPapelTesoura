@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{9025E3AD-808A-4BDD-8EBF-050F007D11F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedraPapelTesoura", "PedraPapelTesoura\PedraPapelTesoura.csproj", "{90125707-A3F4-4C1E-A3EB-CC7B67D07FB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9025E3AD-808A-4BDD-8EBF-050F007D11F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9025E3AD-808A-4BDD-8EBF-050F007D11F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9025E3AD-808A-4BDD-8EBF-050F007D11F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9025E3AD-808A-4BDD-8EBF-050F007D11F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90125707-A3F4-4C1E-A3EB-CC7B67D07FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90125707-A3F4-4C1E-A3EB-CC7B67D07FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90125707-A3F4-4C1E-A3EB-CC7B67D07FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90125707-A3F4-4C1E-A3EB-CC7B67D07FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
