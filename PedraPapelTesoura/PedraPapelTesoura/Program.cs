@@ -21,6 +21,7 @@ namespace PedraPapelTesoura {
             string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
+            int resultado;
             #endregion
 
             #region Questão
@@ -49,7 +50,11 @@ namespace PedraPapelTesoura {
             //Usar ambas as stringss de escolha e verificar quem ganha ou se há empate. Dizer primeiro ao utilizador qual foi a escolha do PC
             // Vou fazer isto de uma maneira muito feia porque ainda não tenho a confiança necessária para andar a usar arrays multi-dimensionais em c#
 
-            //if ()
+            if (escolhaDoComputador == escolhaDoUtilizador) {
+                resultado = 0;
+                Console.WriteLine();
+                Console.WriteLine("Empate! Ninguém ganha.");
+            }
 
             #endregion
         }
