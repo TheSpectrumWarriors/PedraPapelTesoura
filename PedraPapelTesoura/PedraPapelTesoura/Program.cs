@@ -21,6 +21,7 @@ namespace PedraPapelTesoura {
             string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
+            int resultado;
             #endregion
 
             #region Questão
@@ -49,7 +50,50 @@ namespace PedraPapelTesoura {
             //Usar ambas as stringss de escolha e verificar quem ganha ou se há empate. Dizer primeiro ao utilizador qual foi a escolha do PC
             // Vou fazer isto de uma maneira muito feia porque ainda não tenho a confiança necessária para andar a usar arrays multi-dimensionais em c#
 
-            //if ()
+            // Para o caso de ser preciso mais tarde:
+            // resultado: 0 - Empate, 1 - Utilizador Ganha, 2 - Computador Ganha
+
+            if (escolhaDoComputador == escolhaDoUtilizador) {
+                resultado = 0;
+                Console.WriteLine();
+                Console.WriteLine("Empate! Ninguém ganha.");
+            }
+
+            else if (escolhaDoComputador == "Pedra") {
+                Console.WriteLine();
+                if (escolhaDoUtilizador == "Tesoura"){
+                    resultado = 2;
+                    Console.WriteLine("O Computador Ganha! A Pedra esmaga a Tesoura.");
+                }
+                else if (escolhaDoUtilizador == "Papel"){
+                    resultado = 1;
+                    Console.WriteLine("O Utilizador Ganha! O Papel embrulha a Pedra.");
+                }
+            }
+
+            else if (escolhaDoComputador == "Papel") {
+                Console.WriteLine();
+                if (escolhaDoUtilizador == "Pedra"){
+                    resultado = 2;
+                    Console.WriteLine("O Computador Ganha! O Papel embrulha a Pedra");
+                }
+                else if (escolhaDoUtilizador == "Tesoura"){
+                    resultado = 1;
+                    Console.WriteLine("O Utilizador Ganha! A Tesoura corta o Papel");
+                }
+            }
+
+            else if (escolhaDoComputador == "Tesoura") {
+                Console.WriteLine();
+                if (escolhaDoUtilizador == "Papel"){
+                    resultado = 2;
+                    Console.WriteLine("O Computador Ganha! A Tesoura corta o Papel");
+                }
+                else if (escolhaDoUtilizador == "Pedra"){
+                    resultado = 1;
+                    Console.WriteLine("O Utilizador Ganha! A Pedra esmaga a Tesoura");
+                }
+            }
 
             #endregion
         }
