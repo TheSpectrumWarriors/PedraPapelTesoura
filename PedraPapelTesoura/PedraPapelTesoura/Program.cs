@@ -96,6 +96,7 @@ namespace PedraPapelTesoura {
             }
 
             #endregion
+            Console.ReadKey();
         }
     }
 }
