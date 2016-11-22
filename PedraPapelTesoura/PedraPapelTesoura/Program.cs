@@ -25,6 +25,11 @@ namespace PedraPapelTesoura {
 
             #region Questão
             //usar string escolhaDoUtilizador
+            Console.Write("Escolhe Pedra/Papel/Tesoura: ");
+            escolhaDoUtilizador = Console.ReadLine();
+
+            if escolhaDoUtilizador = "Pedra"
+
             #endregion
 
             #region Random
