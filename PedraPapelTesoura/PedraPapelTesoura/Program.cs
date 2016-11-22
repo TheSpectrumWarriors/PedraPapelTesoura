@@ -21,15 +21,19 @@ namespace PedraPapelTesoura {
             string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
+            #endregion
 
             #region Questão
             //usar string escolhaDoUtilizador
+            #endregion
 
             #region Random
             //usar string escolhaDoComputador
+            #endregion
 
             #region Verficação
             //Usar ambas as stringss de escolha e verificar quem ganha ou se há empate. Dizer primeiro ao utilizador qual foi a escolha do PC
+            #endregion
         }
     }
 }
