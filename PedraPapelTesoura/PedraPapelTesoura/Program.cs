@@ -27,7 +27,7 @@ namespace PedraPapelTesoura {
             #region Questão
             //usar string escolhaDoUtilizador
             Console.Write("Escolhe Pedra/Papel/Tesoura: ");
-            escolhaDoUtilizador = Console.ReadLine();
+            escolhaDoUtilizador = Console.ReadLine().ToUpper();
 
             
 
@@ -52,7 +52,7 @@ namespace PedraPapelTesoura {
             // Para o caso de ser preciso mais tarde:
             // resultado: 0 - Empate, 1 - Utilizador Ganha, 2 - Computador Ganha
 
-            if (escolhaDoComputador == escolhaDoUtilizador) {
+            if (escolhaDoComputador.ToUpper() == escolhaDoUtilizador) {
                 resultado = 0;
                 Console.WriteLine();
                 Console.WriteLine("Empate! Ninguém ganha.");
@@ -60,11 +60,11 @@ namespace PedraPapelTesoura {
 
             else if (escolhaDoComputador == "Pedra") {
                 Console.WriteLine();
-                if (escolhaDoUtilizador == "Tesoura"){
+                if (escolhaDoUtilizador == "Tesoura".ToUpper()) {
                     resultado = 2;
                     Console.WriteLine("O Computador Ganha! A Pedra esmaga a Tesoura.");
                 }
-                else if (escolhaDoUtilizador == "Papel"){
+                else if (escolhaDoUtilizador == "Papel".ToUpper()) {
                     resultado = 1;
                     Console.WriteLine("O Utilizador Ganha! O Papel embrulha a Pedra.");
                 }
@@ -72,11 +72,11 @@ namespace PedraPapelTesoura {
 
             else if (escolhaDoComputador == "Papel") {
                 Console.WriteLine();
-                if (escolhaDoUtilizador == "Pedra"){
+                if (escolhaDoUtilizador == "Pedra".ToUpper()) {
                     resultado = 2;
                     Console.WriteLine("O Computador Ganha! O Papel embrulha a Pedra");
                 }
-                else if (escolhaDoUtilizador == "Tesoura"){
+                else if (escolhaDoUtilizador == "Tesoura".ToUpper()) {
                     resultado = 1;
                     Console.WriteLine("O Utilizador Ganha! A Tesoura corta o Papel");
                 }
@@ -84,11 +84,11 @@ namespace PedraPapelTesoura {
 
             else if (escolhaDoComputador == "Tesoura") {
                 Console.WriteLine();
-                if (escolhaDoUtilizador == "Papel"){
+                if (escolhaDoUtilizador == "Papel".ToUpper()) {
                     resultado = 2;
                     Console.WriteLine("O Computador Ganha! A Tesoura corta o Papel");
                 }
-                else if (escolhaDoUtilizador == "Pedra"){
+                else if (escolhaDoUtilizador == "Pedra".ToUpper()) {
                     resultado = 1;
                     Console.WriteLine("O Utilizador Ganha! A Pedra esmaga a Tesoura");
                 }
