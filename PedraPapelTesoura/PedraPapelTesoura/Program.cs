@@ -34,6 +34,15 @@ namespace PedraPapelTesoura {
 
             #region Random
             //usar string escolhaDoComputador
+            int x = new Random().Next(1 , 101);
+            if (x < 34) {
+                escolhaDoComputador = opções[0];
+            } else if(x < 67){
+                escolhaDoComputador = opções[1];
+            } else {
+                escolhaDoComputador = opções[2];
+            }
+            Console.WriteLine("O Computador escolheu: " + escolhaDoComputador);
             #endregion
 
             #region Verficação
