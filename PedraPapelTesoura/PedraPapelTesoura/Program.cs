@@ -25,10 +25,24 @@ namespace PedraPapelTesoura {
 
             #region Questão
             //usar string escolhaDoUtilizador
+            Console.Write("Escolhe Pedra/Papel/Tesoura: ");
+            escolhaDoUtilizador = Console.ReadLine();
+
+            if escolhaDoUtilizador = "Pedra"
+
             #endregion
 
             #region Random
             //usar string escolhaDoComputador
+            int x = new Random().Next(1 , 101);
+            if (x < 34) {
+                escolhaDoComputador = opções[0];
+            } else if(x < 67){
+                escolhaDoComputador = opções[1];
+            } else {
+                escolhaDoComputador = opções[2];
+            }
+            Console.WriteLine("O Computador escolheu: " + escolhaDoComputador);
             #endregion
 
             #region Verficação
