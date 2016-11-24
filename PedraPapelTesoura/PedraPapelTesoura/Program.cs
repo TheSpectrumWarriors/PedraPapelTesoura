@@ -21,7 +21,7 @@ namespace PedraPapelTesoura {
             string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
-            int resultado;
+            int resultado = 0;
             int userPoints = 0;
             int computerPoints = 0;
             bool playing = true;
@@ -30,10 +30,7 @@ namespace PedraPapelTesoura {
             do {
 
                 #region Questão
-                //usar string escolhaDoUtilizador
-                Console.Write("Escolhe Pedra/Papel/Tesoura: ");
-                escolhaDoUtilizador = Console.ReadLine().ToUpper();
-
+                escolhaDoUtilizador = fazerPergunta(opções);
                 #endregion
 
                 #region Random
@@ -88,6 +85,14 @@ namespace PedraPapelTesoura {
                     }
                 }
 
+                if (resultado == 1) {
+                    userPoints = userPoints + 1;
+                }
+
+                if (resultado == 2) {
+                    computerPoints = computerPoints + 1;
+                }
+
                 bool validKey = false;
 
                 do {
@@ -112,6 +117,21 @@ namespace PedraPapelTesoura {
             } while (playing == true);
 
             Console.ReadKey();
+        }
+
+        static String fazerPergunta(string[] opções)
+        {
+            //usar string escolhaDoUtilizador
+            Console.Write("Escolhe Pedra/Papel/Tesoura: ");
+            String escolhaDoUtilizador = Console.ReadLine();
+
+            if (!(opções.Contains(escolhaDoUtilizador)))
+            {
+                Console.WriteLine("Erro! Não escreveu uma das opções!");
+                escolhaDoUtilizador = fazerPergunta(opções);
+            }
+
+            return escolhaDoUtilizador.ToUpper();
         }
     }
 }
