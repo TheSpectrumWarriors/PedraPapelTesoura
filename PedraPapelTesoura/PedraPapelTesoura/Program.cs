@@ -15,10 +15,11 @@ using System.Threading.Tasks;
 
 namespace PedraPapelTesoura {
     class Program {
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
             #region Variáveis
             // Array com as 3 opções (necessário para o random)
-            string[] opções = new string[6] {"PEDRA", "PAPEL", "TESOURA", "1", "2", "3"};
+            string[] opções = new string[6] { "PEDRA", "PAPEL", "TESOURA", "1", "2", "3" };
             String escolhaDoUtilizador;
             String escolhaDoComputador;
             int resultado = 0;
@@ -26,9 +27,19 @@ namespace PedraPapelTesoura {
             int computerPoints = 0;
             bool playing = true;
             bool secondTime = false;
+            String nome;
+            String highscore;
             #endregion
 
-            do {
+            do
+            {
+
+                #region mostrarHighscore
+                nome = lerFicheiro(1);
+                highscore = lerFicheiro(2);
+
+                // Lógica: por baixo desta linha
+                #endregion
 
                 #region Questão
                 escolhaDoUtilizador = fazerPergunta(opções, userPoints, computerPoints, secondTime);
@@ -38,11 +49,16 @@ namespace PedraPapelTesoura {
                 #region Random
                 //usar string escolhaDoComputador
                 int x = new Random().Next(1, 101);
-                if (x < 34) {
+                if (x < 34)
+                {
                     escolhaDoComputador = "Pedra";
-                } else if (x < 67) {
+                }
+                else if (x < 67)
+                {
                     escolhaDoComputador = "Papel";
-                } else {
+                }
+                else
+                {
                     escolhaDoComputador = "Tesoura";
                 }
                 Console.WriteLine("O Computador escolheu: " + escolhaDoComputador);
@@ -58,60 +74,92 @@ namespace PedraPapelTesoura {
                 if (escolhaDoUtilizador == "2") { escolhaDoUtilizador = "Papel".ToUpper(); }
                 if (escolhaDoUtilizador == "3") { escolhaDoUtilizador = "Tesoura".ToUpper(); }
 
-                if (escolhaDoComputador.ToUpper() == escolhaDoUtilizador) {
+                if (escolhaDoComputador.ToUpper() == escolhaDoUtilizador)
+                {
                     resultado = 0;
                     Console.WriteLine();
                     Console.WriteLine("Empate! Ninguém ganha.");
-                } else if (escolhaDoComputador == "Pedra") {
+                }
+                else if (escolhaDoComputador == "Pedra")
+                {
                     Console.WriteLine();
-                    if (escolhaDoUtilizador == "Tesoura".ToUpper()) {
+                    if (escolhaDoUtilizador == "Tesoura".ToUpper())
+                    {
                         resultado = 2;
                         Console.WriteLine("O Computador Ganha! A Pedra esmaga a Tesoura.");
-                    } else if (escolhaDoUtilizador == "Papel".ToUpper()) {
+                    }
+                    else if (escolhaDoUtilizador == "Papel".ToUpper())
+                    {
                         resultado = 1;
                         Console.WriteLine("O Utilizador Ganha! O Papel embrulha a Pedra.");
                     }
-                } else if (escolhaDoComputador == "Papel") {
+                }
+                else if (escolhaDoComputador == "Papel")
+                {
                     Console.WriteLine();
-                    if (escolhaDoUtilizador == "Pedra".ToUpper()) {
+                    if (escolhaDoUtilizador == "Pedra".ToUpper())
+                    {
                         resultado = 2;
                         Console.WriteLine("O Computador Ganha! O Papel embrulha a Pedra");
-                    } else if (escolhaDoUtilizador == "Tesoura".ToUpper()) {
+                    }
+                    else if (escolhaDoUtilizador == "Tesoura".ToUpper())
+                    {
                         resultado = 1;
                         Console.WriteLine("O Utilizador Ganha! A Tesoura corta o Papel");
                     }
-                } else if (escolhaDoComputador == "Tesoura") {
+                }
+                else if (escolhaDoComputador == "Tesoura")
+                {
                     Console.WriteLine();
-                    if (escolhaDoUtilizador == "Papel".ToUpper()) {
+                    if (escolhaDoUtilizador == "Papel".ToUpper())
+                    {
                         resultado = 2;
                         Console.WriteLine("O Computador Ganha! A Tesoura corta o Papel");
-                    } else if (escolhaDoUtilizador == "Pedra".ToUpper()) {
+                    }
+                    else if (escolhaDoUtilizador == "Pedra".ToUpper())
+                    {
                         resultado = 1;
                         Console.WriteLine("O Utilizador Ganha! A Pedra esmaga a Tesoura");
                     }
                 }
 
-                if (resultado == 1) {
+                if (resultado == 1)
+                {
                     userPoints = userPoints + 1;
                 }
 
-                else if (resultado == 2) {
+                else if (resultado == 2)
+                {
                     computerPoints = computerPoints + 1;
                 }
 
                 bool validKey = false;
 
-                do {
+                do
+                {
                     Console.WriteLine();
                     Console.WriteLine("Clica Enter para continuar a jogar!");
                     Console.WriteLine("Ou X para sair do jogo.");
                     ConsoleKeyInfo pressedKey = Console.ReadKey();
-                    if (pressedKey.Key == ConsoleKey.X) {
+                    if (pressedKey.Key == ConsoleKey.X)
+                    {
+                        #region gravarHighscore
+                        //Vefificar se é highscore
+                        // Se sim, perguntar nome, etc...
+
+                        //Adicionar argumentos se for necessário
+                        gravarFicheiro(Nome, pontuação);
+                        #endregion
+
                         playing = false;
                         validKey = true;
-                    } else if (pressedKey.Key == ConsoleKey.Enter) {
+                    }
+                    else if (pressedKey.Key == ConsoleKey.Enter)
+                    {
                         validKey = true;
-                    } else {
+                    }
+                    else
+                    {
                         //Repeats until validKey = true
                     }
 
@@ -145,6 +193,20 @@ namespace PedraPapelTesoura {
 
             secondTime = true;
             return escolhaDoUtilizador.ToUpper();
+        }
+
+        static void gravarFicheiro(String nome, String pontuação){
+            //Preencher
+        }
+
+        static String lerFicheiro(int mode) {
+            if(mode == 1) {
+                //devolver nome
+            }
+            // Se mode for igual a 2:
+            else {
+                //devolver pontuação
+            }
         }
     }
 }
