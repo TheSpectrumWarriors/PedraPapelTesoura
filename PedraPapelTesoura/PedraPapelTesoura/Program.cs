@@ -18,7 +18,7 @@ namespace PedraPapelTesoura {
         static void Main(string[] args) {
             #region Variáveis
             // Array com as 3 opções (necessário para o random)
-            string[] opções = new string[6] {"Pedra", "Papel", "Tesoura", "1", "2", "3"};
+            string[] opções = new string[6] {"PEDRA", "PAPEL", "TESOURA", "1", "2", "3"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
             int resultado = 0;
@@ -39,11 +39,11 @@ namespace PedraPapelTesoura {
                 //usar string escolhaDoComputador
                 int x = new Random().Next(1, 101);
                 if (x < 34) {
-                    escolhaDoComputador = opções[0];
+                    escolhaDoComputador = "Pedra";
                 } else if (x < 67) {
-                    escolhaDoComputador = opções[1];
+                    escolhaDoComputador = "Papel";
                 } else {
-                    escolhaDoComputador = opções[2];
+                    escolhaDoComputador = "Tesoura";
                 }
                 Console.WriteLine("O Computador escolheu: " + escolhaDoComputador);
                 #endregion
@@ -131,9 +131,8 @@ namespace PedraPapelTesoura {
             //usar string escolhaDoUtilizador
             Console.Write("Escolhe Pedra/Papel/Tesoura: ");
             String escolhaDoUtilizador = Console.ReadLine();
-            
 
-            if (!(opções.Contains(escolhaDoUtilizador))) {
+            if (!(opções.Contains(escolhaDoUtilizador.ToUpper()))) {
                 Console.WriteLine();
                 Console.Clear();
                 if (secondTime == true) {
