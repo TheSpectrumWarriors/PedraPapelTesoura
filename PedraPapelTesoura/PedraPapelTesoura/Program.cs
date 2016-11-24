@@ -125,9 +125,9 @@ namespace PedraPapelTesoura {
             Console.Write("Escolhe Pedra/Papel/Tesoura: ");
             String escolhaDoUtilizador = Console.ReadLine();
 
-            if (!(opções.Contains(escolhaDoUtilizador)))
-            {
-                Console.WriteLine("Erro! Não escreveu uma das opções!");
+            if (!(opções.Contains(escolhaDoUtilizador))) {
+                Console.WriteLine();
+                Console.WriteLine("Erro! Não escreveu nenhuma das opções!");
                 escolhaDoUtilizador = fazerPergunta(opções);
             }
 
