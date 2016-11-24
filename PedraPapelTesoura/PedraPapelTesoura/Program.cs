@@ -18,7 +18,7 @@ namespace PedraPapelTesoura {
         static void Main(string[] args) {
             #region Variáveis
             // Array com as 3 opções (necessário para o random)
-            string[] opções = new string[3] {"Pedra", "Papel", "Tesoura"};
+            string[] opções = new string[6] {"Pedra", "Papel", "Tesoura", "1", "2", "3"};
             String escolhaDoUtilizador;
             String escolhaDoComputador;
             int resultado = 0;
@@ -51,6 +51,10 @@ namespace PedraPapelTesoura {
 
                 // Para o caso de ser preciso mais tarde:
                 // resultado: 0 - Empate, 1 - Utilizador Ganha, 2 - Computador Ganha
+
+                if (escolhaDoUtilizador == "1") { escolhaDoUtilizador = "Pedra".ToUpper(); }
+                if (escolhaDoUtilizador == "2") { escolhaDoUtilizador = "Papel".ToUpper(); }
+                if (escolhaDoUtilizador == "3") { escolhaDoUtilizador = "Tesoura".ToUpper(); }
 
                 if (escolhaDoComputador.ToUpper() == escolhaDoUtilizador) {
                     resultado = 0;
@@ -89,13 +93,14 @@ namespace PedraPapelTesoura {
                     userPoints = userPoints + 1;
                 }
 
-                if (resultado == 2) {
+                else if (resultado == 2) {
                     computerPoints = computerPoints + 1;
                 }
 
                 bool validKey = false;
 
                 do {
+                    Console.WriteLine();
                     Console.WriteLine("Clica Enter para continuar a jogar!");
                     Console.WriteLine("Ou X para sair do jogo.");
                     ConsoleKeyInfo pressedKey = Console.ReadKey();
