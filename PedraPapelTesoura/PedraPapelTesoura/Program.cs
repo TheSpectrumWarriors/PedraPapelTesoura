@@ -41,6 +41,10 @@ namespace PedraPapelTesoura {
                 highscore = lerFicheiro(2);
 
                 // Lógica: por baixo desta linha
+                Console.WriteLine("Highscore: " + nome);
+                Console.WriteLine("Score: " + highscore);
+                Console.WriteLine("");
+
                 #endregion
 
                 #region Questão
