@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace PedraPapelTesoura {
 
             do
             {
-
+                gravarFicheiro("Tiago", "21-8");
                 #region mostrarHighscore
                 nome = lerFicheiro(1);
                 highscore = lerFicheiro(2);
@@ -148,6 +149,8 @@ namespace PedraPapelTesoura {
                         // Se sim, perguntar nome, etc...
 
                         //Adicionar argumentos se for necessário
+                        String Nome = "x";
+                        String pontuação = "t";
                         gravarFicheiro(Nome, pontuação);
                         #endregion
 
@@ -156,6 +159,7 @@ namespace PedraPapelTesoura {
                     }
                     else if (pressedKey.Key == ConsoleKey.Enter)
                     {
+                        //TODO: Verificar se é highscore novo e avisar o utilizador.
                         validKey = true;
                     }
                     else
@@ -196,16 +200,27 @@ namespace PedraPapelTesoura {
         }
 
         static void gravarFicheiro(String nome, String pontuação){
-            //Preencher
+            var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "\\resultado.txt");
+            // Exemplo de string a gravar no ficheiro: Tiago#21-8
+            string createText = nome + "#" + pontuação + Environment.NewLine;
+            File.WriteAllText(path, createText);
         }
 
         static String lerFicheiro(int mode) {
-            if(mode == 1) {
+            var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "\\resultado.txt");
+            string text = File.ReadAllText(path, Encoding.UTF8);
+            // Exemplo de string a ler do ficheiro: Tiago#21-8
+
+            String[] subStrings = text.Split('#');
+
+            if (mode == 1) {
                 //devolver nome
+                return subStrings[0];
             }
             // Se mode for igual a 2:
             else {
-                //devolver pontuação
+                //devolver pontuação - Formato: "PontuaçãoUtiizador"-"PontuaçãoPC" - exemplo: 21-8
+                return subStrings[1];
             }
         }
     }
