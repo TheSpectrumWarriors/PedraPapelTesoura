@@ -35,7 +35,9 @@ namespace PedraPapelTesoura {
             do
             {
                 #region mostrarHighscore
+                // chamar lerFicheiro() com argumento 1 devolve o nome
                 nome = lerFicheiro(1);
+                // chamar lerFicheiro() com argumento 2 devolve a pontuação no formato pontosUtil-pontosPC. Exemplo: 21-8
                 highscore = lerFicheiro(2);
 
                 // Lógica: por baixo desta linha
@@ -143,14 +145,43 @@ namespace PedraPapelTesoura {
                     ConsoleKeyInfo pressedKey = Console.ReadKey();
                     if (pressedKey.Key == ConsoleKey.X)
                     {
+                        // Esta parte do código é executada se o utilizador quiser sair do jogo, antes de ele sair vamos, SE a pontuação dele for novo recorde, peruntar-lhe o nome e gravar o nome e pontuação no ficheiro
                         #region gravarHighscore
-                        //Vefificar se é highscore
+                        // PRIMEIRO:
+                        // Vefificar se é highscore
                         // Se sim, perguntar nome, etc...
 
-                        //Adicionar argumentos se for necessário
-                        String Nome = "x";
-                        String pontuação = "t";
+                        //Como verificar se é highscore?
+                        // chamar lerFicheiro() com argumento 1 devolve o nome
+                        // String nome = lerFicheiro(1);
+                        // chamar lerFicheiro() com argumento 2 devolve a pontuação no formato pontosUtil-pontosPC. Exemplo: 21-8
+                        // String highscore = lerFicheiro(2);
+                        // Comparar pontuação com a atual é o que tens q fazer
+                        // A pontuação atual é dada pelas variáveis userPoints e computerPoints, ambas integers
+
+                        // A string pontuação é, por exemplo: "21-8". Como separar os pontos do user dos do PC na string tradução?
+                        // A seguinte linha de código separa a string pontuação entre: "parte que vem antes do traço"  e "parte que vem depois do traço" e guarda ambas as partes como strings num array
+                        // String[] subStrings = pontuação.Split('-');
+                        // Para aceder à primeira parte (no exemplo: 21) fazemos String blabla = subStrings[0] porque essa parte é guardada como a primeira string do array, ou seja, o elemento de índice 0
+                        // Para aceder à segunda parte (no exemplo: 8) fazemos String bleble = subStrings[1]
+
+                        // Para comparar o recorde em vigor (vindo do ficheiro) e a pontuação atual (vinda das variáveis):
+                        // Como o recorde está guardado em duas STRINGS e a pontuação atual em dois INTEGERS vais ter de pesquisar na net como converter String para Integer para transformar as strings do recorde em números para os puderes comparar com os Integers de pontuação atual
+
+                        // PS: Não sei se a nossa definição de recorde vai ser:
+                        // 1 - Maior número de pontos do utilizador (nesse caso n precisas das strings/ints que têm a pontuação do PC)
+                        // ou 2 - Maior diferença de pontos entre o utilizador e o PC se o utilizador ganhou (precisas de tudo)
+                        // Escolhe
+
+                        // Qualquer dúvida estou no messenger para tentar ajudar.
+                        // Boa Sorte!
+
+
+                        String Nome = "x"; // aqui deve estar o input do utilizador
+                        String pontuação = "t"; // Tem que ser String! Procura como converter int para String se for necessário.
+                        // Para gravar no ficheiro:
                         gravarFicheiro(Nome, pontuação);
+                        // Se tiveres a ideia de gravar mais do que só o nome e pontuação avisa que eu terei que mudar os métodos lerFicheiro() e gravarFicheiro()
                         #endregion
 
                         playing = false;
