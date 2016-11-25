@@ -34,7 +34,6 @@ namespace PedraPapelTesoura {
 
             do
             {
-                gravarFicheiro("Tiago", "21-8");
                 #region mostrarHighscore
                 nome = lerFicheiro(1);
                 highscore = lerFicheiro(2);
@@ -200,14 +199,14 @@ namespace PedraPapelTesoura {
         }
 
         static void gravarFicheiro(String nome, String pontuação){
-            var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "\\resultado.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Spectrum\\resultado.txt");
             // Exemplo de string a gravar no ficheiro: Tiago#21-8
             string createText = nome + "#" + pontuação + Environment.NewLine;
             File.WriteAllText(path, createText);
         }
 
         static String lerFicheiro(int mode) {
-            var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "\\resultado.txt");
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Spectrum\\resultado.txt");
             string text = File.ReadAllText(path, Encoding.UTF8);
             // Exemplo de string a ler do ficheiro: Tiago#21-8
 
